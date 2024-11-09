@@ -12,6 +12,17 @@ jobs:
       # экшен — выполняет какую-то задачу
       # checkout — клонирует репозиторий
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm' # ускоряет повторные сборки
+      
+      - uses: hexlet-components/hello-from-hexlet-action@release
       # run – произвольная bash-команда
       # make say-hello выведет содержимое текущего репозитория
+      - run: npm ci
+      
+      - run: npm test
+
       - run: make say-hello
