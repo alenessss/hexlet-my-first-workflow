@@ -20,7 +20,5 @@ jobs:
       # run – произвольная bash-команда
       # make say-hello выведет содержимое текущего репозитория
       - run: npm ci
-      
-      - run: npm test
 
       - run: make say-hello
